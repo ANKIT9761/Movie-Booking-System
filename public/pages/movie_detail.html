@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detail Page</title>
+
+    <!-- fontawesome link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- tailwind css link  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .container 
+        {
+            display: flex;
+            background-image: url("https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/bhool-bhulaiyaa-3-et00353996-1728474428.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner Section -->
+    <section>
+        <div class="container">
+
+            <div class="flex w-full px-40 py-10 bg-opacity-60 bg-black">
+            <!-- Poster -->
+            <div class="w-64 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/bhool-bhulaiyaa-3-et00353996-1728474428.jpg" alt="Bhool Bhulaiyaa 3 Poster" class="w-full h-auto rounded-lg">
+            </div>
+
+            <!-- Movie Details -->
+            <div class="pl-10 flex flex-col justify-center space-y-5">
+                <div class="text-white text-3xl font-bold">Bhool Bhulaiyaa 3</div>
+                
+                <div class="flex items-center space-x-2 bg-slate-900 px-6 py-2 rounded-md font-semibold">
+                    <span class="text-yellow-500 text-2xl"><i class="fa-solid fa-star"></i></span>
+                    <span class="text-xl text-white">6.1/10</span>
+                    <span class="text-gray-300 text-sm">(163.1K Votes)</span>
+                    <button class="bg-white text-black-500 px-6 py-2 rounded-lg font-semibold">Rate Now</button>
+                </div>
+
+                <div class="flex space-x-4">
+                    <span class="bg-white px-3 py-1 rounded-sm text-md">2D</span>
+                    <span class="bg-white px-3 py-1 rounded-sm text-md">Hindi</span>
+                </div>
+
+                <div class="text-gray-300 text-lg mt-2 font-bold">2h 38m • Comedy, Horror • UA • 1 Nov, 2024</div>
+
+                <div class="flex space-x-4 mt-10">
+                    <button class="bg-red-500 text-white px-10 py-2 rounded-md font-semibold hover:bg-red-600">Book Tickets</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Synopsis Section -->
+    <section class="max-w-6xl mx-auto p-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Synopsis</h3>
+        <p class="text-gray-700">A gripping tale of adventure and courage, where the protagonist embarks on a journey that changes their life. Filled with action, drama, and unexpected twists, this movie keeps the audience on the edge of their seats until the end.</p>
+    </section>
+
+    <!-- Cast Section -->
+    <section class="max-w-6xl mx-auto p-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-black-800 mb-4">Cast</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Cast Member Card -->
+            <div class="text-center">
+                <img src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/kartik-aaryan-1045198-1685968467.jpg" alt="Actor Name" class="w-24 h-24 rounded-full mx-auto shadow-lg">
+                <p class="text-lg font-semibold text-gray-800 mt-2">Kartik Aaryan</p>
+                <p class="text-gray-500">as Rooh Baba</p>
+            </div>
+            <div class="text-center">
+                <img src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/kartik-aaryan-1045198-1685968467.jpg" alt="Actor Name" class="w-24 h-24 rounded-full mx-auto shadow-lg">
+                <p class="text-lg font-semibold text-gray-800 mt-2">Kartik Aaryan</p>
+                <p class="text-gray-500">as Rooh Baba</p>
+            </div>
+            <div class="text-center">
+                <img src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/kartik-aaryan-1045198-1685968467.jpg" alt="Actor Name" class="w-24 h-24 rounded-full mx-auto shadow-lg">
+                <p class="text-lg font-semibold text-gray-800 mt-2">Kartik Aaryan</p>
+                <p class="text-gray-500">as Rooh Baba</p>
+            </div>
+            <div class="text-center">
+                <img src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/kartik-aaryan-1045198-1685968467.jpg" alt="Actor Name" class="w-24 h-24 rounded-full mx-auto shadow-lg">
+                <p class="text-lg font-semibold text-gray-800 mt-2">Kartik Aaryan</p>
+                <p class="text-gray-500">as Rooh Baba</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crew section  -->
+    <section class="max-w-6xl mx-auto p-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-black-800 mb-4">Crew</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Crew Member Card -->
+            <div class="text-center">
+                <img src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/anees-bazmee-2651-19-09-2017-02-07-46.jpg" alt="crew Name" class="w-24 h-24 rounded-full mx-auto shadow-lg">
+                <p class="text-lg font-semibold text-gray-800 mt-2">Anees Bazmee</p>
+                <p class="text-gray-500">Director</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Ratings & Reviews Section -->
+    <section class="max-w-6xl mx-auto p-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">User Ratings & Reviews</h3>
+        <div class="bg-gray-100 p-4 rounded-lg">
+            <p class="text-lg font-semibold text-yellow-500 mb-2">4.5 / 5.0</p>
+            <p class="text-gray-700">Based on 1,234 reviews</p>
+        </div>
+        <!-- Example Review -->
+        <div class="mt-4 space-y-4">
+            <div class="bg-gray-100 p-4 rounded-lg">
+                <p class="font-semibold text-gray-800">User Name</p>
+                <p class="text-gray-700">"Amazing movie with stunning visuals and a gripping storyline!"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Show Timings & Booking Section -->
+    <section class="max-w-6xl mx-auto p-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Show Timings</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Show Timing Card -->
+            <div class="bg-gray-100 p-4 rounded-lg text-center">
+                <p class="font-semibold text-gray-800">Location Name</p>
+                <p class="text-gray-600">10:00 AM, 1:00 PM, 4:00 PM, 7:00 PM</p>
+                <button class="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg">Book Now</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
