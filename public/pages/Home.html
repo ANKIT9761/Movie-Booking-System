@@ -51,7 +51,6 @@
           padding: 12px 15px;
           border-bottom: 1px solid #ddd;
           cursor: pointer;
-          transition: background-color 0.3s;
       }
 
       .menu-item:last-child {
@@ -233,162 +232,7 @@
           <p class="text-2xl font-semibold mb-6">Movies</p>
 
           <!-- Grid for Movie Cards -->
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-          >
-            <!-- Movie Card 1 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie1.jpg"
-                alt="Movie 1"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 1</p>
-              <p class="text-gray-600">Action | HD</p>
-            </div>
-
-            <!-- Movie Card 2 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie2.jpg"
-                alt="Movie 2"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 2</p>
-              <p class="text-gray-600">Comedy | 4K</p>
-            </div>
-
-            <!-- Movie Card 3 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie3.jpg"
-                alt="Movie 3"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 3</p>
-              <p class="text-gray-600">Drama | IMAX</p>
-            </div>
-
-            <!-- Movie Card 4 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie4.jpg"
-                alt="Movie 4"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 4</p>
-              <p class="text-gray-600">Horror | Standard</p>
-            </div>
-
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie1.jpg"
-                alt="Movie 1"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 1</p>
-              <p class="text-gray-600">Action | HD</p>
-            </div>
-
-            <!-- Movie Card 2 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie2.jpg"
-                alt="Movie 2"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 2</p>
-              <p class="text-gray-600">Comedy | 4K</p>
-            </div>
-
-            <!-- Movie Card 3 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie3.jpg"
-                alt="Movie 3"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 3</p>
-              <p class="text-gray-600">Drama | IMAX</p>
-            </div>
-
-            <!-- Movie Card 4 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie4.jpg"
-                alt="Movie 4"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 4</p>
-              <p class="text-gray-600">Horror | Standard</p>
-            </div>
-
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie1.jpg"
-                alt="Movie 1"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 1</p>
-              <p class="text-gray-600">Action | HD</p>
-            </div>
-
-            <!-- Movie Card 2 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie2.jpg"
-                alt="Movie 2"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 2</p>
-              <p class="text-gray-600">Comedy | 4K</p>
-            </div>
-
-            <!-- Movie Card 3 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie3.jpg"
-                alt="Movie 3"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 3</p>
-              <p class="text-gray-600">Drama | IMAX</p>
-            </div>
-
-            <!-- Movie Card 4 -->
-            <div
-              class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105"
-            >
-              <img
-                src="movie4.jpg"
-                alt="Movie 4"
-                class="w-full h-48 object-cover rounded-t-lg mb-4"
-              />
-              <p class="font-semibold text-lg">Movie Title 4</p>
-              <p class="text-gray-600">Horror | Standard</p>
-            </div>
+          <div id="movieGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           </div>
         </div>
       </div>
@@ -482,24 +326,8 @@
         </div>
       </div>
     </div>
-</div>
-
-
-  <script>
-    function toggleMenu() {
-        const menu = document.getElementById("dropdownMenu");
-        menu.classList.toggle("show");
-    }
-
-    window.onclick = function(event) {
-        const menu = document.getElementById("dropdownMenu");
-        const button = document.querySelector(".menu-button");
-        if (event.target !== menu && event.target !== button) {
-            menu.classList.remove("show");
-        }
-    }
-  </script>
-
-
+  </div>
   </body>
 </html>
+
+<script src="/Movie-Booking-System/public/js/home.js"></script>
