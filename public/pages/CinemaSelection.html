@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 3em;
+            color: #333;
+            margin: 0;
+        }
+        .header .date {
+            font-size: 1.8em;
+            color: #555;
+            margin-top: 5px;
+        }
+        .cinema {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .cinema:last-child {
+            border-bottom: none;
+        }
+        .cinema-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cinema-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #444;
+        }
+        .cinema-options {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .time-slots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .time-slot {
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        .time-slot:hover {
+            background-color: #e0e0e0;
+        }
+        .select-btn {
+            background-color: #f84464;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .select-btn:hover {
+            background-color: #d23756;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bhool Bhulaiyaa 3</h1>
+            <div class="date">Wednesday, 13 November 2024</div>
+        </div>
+
+        <div class="cinema">
+            <div class="cinema-info">
+                <div class="cinema-name">BMX Cinemas (Balaji Movieplex) - Koparkhairane</div>
+                <button class="select-btn">Select Cinema</button>
+            </div>
+            <div class="cinema-options">
+                <span>🎟 M-Ticket</span>
+                <span>🍔 Food & Beverage</span>
+                <span>🎧 Dolby 7.1</span>
+                <span>🔄 Cancellation Available</span>
+            </div>
+            <div class="time-slots">
+                <div class="time-slot">02:30 PM</div>
+                <div class="time-slot">05:30 PM</div>
+                <div class="time-slot">07:10 PM</div>
+                <div class="time-slot">08:30 PM</div>
+                <div class="time-slot">10:15 PM</div>
+            </div>
+        </div>
+
+        <div class="cinema">
+            <div class="cinema-info">
+                <div class="cinema-name">BMX Cinemas - Littleworld Kharghar</div>
+                <button class="select-btn">Select Cinema</button>
+            </div>
+            <div class="cinema-options">
+                <span>🎟 M-Ticket</span>
+                <span>🍔 Food & Beverage</span>
+                <span>🎧 Atmos</span>
+                <span>🔄 Cancellation Available</span>
+            </div>
+            <div class="time-slots">
+                <div class="time-slot">01:00 PM</div>
+                <div class="time-slot">03:30 PM</div>
+                <div class="time-slot">06:00 PM</div>
+                <div class="time-slot">08:45 PM</div>
+                <div class="time-slot">11:15 PM</div>
+            </div>
+        </div>
+
+        <div class="cinema">
+            <div class="cinema-info">
+                <div class="cinema-name">Cinepolis: Nexus Seawoods, Navi Mumbai</div>
+                <button class="select-btn">Select Cinema</button>
+            </div>
+            <div class="cinema-options">
+                <span>🎟 M-Ticket</span>
+                <span>🍔 Food & Beverage</span>
+                <span>🎧 Dolby 7.1</span>
+            </div>
+            <div class="time-slots">
+                <div class="time-slot">12:10 PM</div>
+                <div class="time-slot">02:20 PM</div>
+                <div class="time-slot">04:35 PM</div>
+                <div class="time-slot">06:50 PM</div>
+                <div class="time-slot">09:30 PM</div>
+            </div>
+        </div>
+
+        <div class="cinema">
+            <div class="cinema-info">
+                <div class="cinema-name">PVR Cinemas: Phoenix Market City, Kurla</div>
+                <button class="select-btn">Select Cinema</button>
+            </div>
+            <div class="cinema-options">
+                <span>🎟 M-Ticket</span>
+                <span>🍔 Food & Beverage</span>
+                <span>🎧 Dolby Atmos</span>
+            </div>
+            <div class="time-slots">
+                <div class="time-slot">11:00 AM</div>
+                <div class="time-slot">01:45 PM</div>
+                <div class="time-slot">04:15 PM</div>
+                <div class="time-slot">06:45 PM</div>
+                <div class="time-slot">09:00 PM</div>
+            </div>
+        </div>
+
+        <div class="cinema">
+            <div class="cinema-info">
+                <div class="cinema-name">INOX: R-City Mall, Ghatkopar</div>
+                <button class="select-btn">Select Cinema</button>
+            </div>
+            <div class="cinema-options">
+                <span>🎟 M-Ticket</span>
+                <span>🍔 Food & Beverage</span>
+            </div>
+            <div class="time-slots">
+                <div class="time-slot">10:00 AM</div>
+                <div class="time-slot">12:30 PM</div>
+                <div class="time-slot">03:15 PM</div>
+                <div class="time-slot">05:45 PM</div>
+                <div class="time-slot">08:15 PM</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
