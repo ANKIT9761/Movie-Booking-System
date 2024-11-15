@@ -1,0 +1,225 @@
+{
+    "theatres": {
+        "0": {
+            "theatre_id": 1,
+            "name": "BMX Cinemas (Balaji Movieplex)",
+            "address": "Connaught Place",
+            "location": "Delhi NCR",
+            "shows": {
+                "0": {
+                    "show_id": 1,
+                    "date": "2024-11-15",
+                    "time": "09:00 AM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "1": {
+                    "show_id": 2,
+                    "date": "2024-11-15",
+                    "time": "02:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "2": {
+                    "show_id": 3,
+                    "date": "2024-11-15",
+                    "time": "09:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                }
+            }
+        },
+        "1": {
+            "theatre_id": 2,
+            "name": "Cinepolis: DLF Mall",
+            "address": "Saket",
+            "location": "Delhi NCR",
+            "shows": {
+                "0": {
+                    "show_id": 1,
+                    "date": "2024-11-15",
+                    "time": "09:00 AM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "1": {
+                    "show_id": 2,
+                    "date": "2024-11-15",
+                    "time": "02:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "2": {
+                    "show_id": 3,
+                    "date": "2024-11-15",
+                    "time": "09:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                }
+            }
+        },
+        "2": {
+            "theatre_id": 3,
+            "name": "PVR Cinemas: Pacific Mall",
+            "address": "Subhash Nagar",
+            "location": "Delhi NCR",
+            "shows": {
+                "0": {
+                    "show_id": 1,
+                    "date": "2024-11-15",
+                    "time": "09:00 AM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "1": {
+                    "show_id": 2,
+                    "date": "2024-11-15",
+                    "time": "02:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "2": {
+                    "show_id": 3,
+                    "date": "2024-11-15",
+                    "time": "09:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                }
+            }
+        },
+        "3": {
+            "theatre_id": 4,
+            "name": "INOX: Select Citywalk",
+            "address": "Saket",
+            "location": "Delhi NCR",
+            "shows": {
+                "0": {
+                    "show_id": 1,
+                    "date": "2024-11-15",
+                    "time": "09:00 AM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "1": {
+                    "show_id": 2,
+                    "date": "2024-11-15",
+                    "time": "02:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "2": {
+                    "show_id": 3,
+                    "date": "2024-11-15",
+                    "time": "09:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                }
+            }
+        },
+        "4": {
+            "theatre_id": 5,
+            "name": "Carnival Cinemas: Ambience Mall",
+            "address": "Vasant Kunj",
+            "location": "Delhi NCR",
+            "shows": {
+                "0": {
+                    "show_id": 1,
+                    "date": "2024-11-15",
+                    "time": "09:00 AM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "1": {
+                    "show_id": 2,
+                    "date": "2024-11-15",
+                    "time": "02:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                },
+                "2": {
+                    "show_id": 3,
+                    "date": "2024-11-15",
+                    "time": "09:00 PM",
+                    "seats": {
+                        "0": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "1": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "2": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "3": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true },
+                        "4": { "0": true, "1": true, "2": true, "3": true, "4": true, "5": true, "6": true, "7": true, "8": true, "9": true }
+                    }
+                }
+            }
+        }
+    }
+}
+    
