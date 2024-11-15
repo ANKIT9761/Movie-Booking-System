@@ -29,13 +29,18 @@ function displayMovies(movie) {
     document.querySelector(".movie-language").textContent = `${movie.language}`;
     document.querySelector(".movie-details").textContent = `${movie.duration} mins • ${movie.genre} • ${movie.language} • ${movie.release_date}`;
     document.querySelector(".movie-synopsis").textContent = movie.synopsis;
+    document.querySelector(".movie-storyLine").textContent = movie.storyline;
 }
 
+let btn1 = document.getElementById("book_ticket")
+let btn2 = document.getElementById("book_ticket1")
 
-document.getElementById("book_ticket").addEventListener("click", ()=>{
-    alert(movieId)
-})
+btn1.addEventListener("click", SeatSelection)
+btn2.addEventListener("click", SeatSelection)
 
-
+function SeatSelection()
+{
+    window.location.href = `SeatSelection.html?movieId=${movieId}`
+}
 
 fetchMovieData();
