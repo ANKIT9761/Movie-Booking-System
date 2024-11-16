@@ -9,54 +9,84 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- tailwind css link  -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <style>
-        .container 
-        {
+        .container {
             display: flex;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
+        }
+        .details-section {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+        .trailer-section {
+            width: 50%;
+            position: relative;
+            background-color: #000;
+        }
+        .trailer-section iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
     <!-- Banner Section -->
     <section>
-        <div class="container">
-
-            <div class="flex w-full px-40 py-10 bg-opacity-60 bg-black">
-                <!-- Poster -->
-                <div class="w-64 rounded-lg overflow-hidden flex-shrink-0 poster">
-                    <img src="" alt="Movie Poster" class="w-full h-auto rounded-lg">
-                </div>
-
-                <!-- Movie Details -->
-                <div class="pl-10 flex flex-col justify-center space-y-5">
-                    <div class="text-white text-3xl font-bold movie-title"></div>
-
-                    <div class="flex items-center space-x-2 bg-slate-900 px-6 py-2 rounded-md font-semibold">
-                        <span class="text-yellow-500 text-2xl"><i class="fa-solid fa-star"></i></span>
-                        <span class="text-xl text-white movie-rating"></span>
-                        <span class="text-gray-300 text-sm">(Votes)</span>
-                        <button class="bg-white text-black-500 px-6 py-2 rounded-lg font-semibold">Rate Now</button>
+        <div class="container flex flex-col md:flex-row overflow-hidden">
+            <!-- Movie Details Section -->
+            <div class="details-section flex flex-col justify-center bg-black p-6 md:p-10 w-full md:w-1/2">
+                <!-- Poster and Details Wrapper -->
+                <div class="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-10">
+                    <!-- Poster -->
+                    <div class="w-full md:w-64 rounded-lg overflow-hidden flex-shrink-0 poster">
+                        <img src="" alt="Movie Poster" class="w-full h-auto rounded-lg">
                     </div>
-
-                    <div class="flex space-x-4">
-                        <span class="bg-white px-3 py-1 rounded-sm text-md quality">2D</span>
-                        <span class="bg-white px-3 py-1 rounded-sm text-md movie-language"></span>
-                    </div>
-
-                    <div class="text-gray-300 text-lg mt-2 font-bold movie-details"></div>
-
-                    <div class="flex space-x-4 mt-10">
-                        <button class="bg-red-500 text-white px-10 py-2 rounded-md font-semibold hover:bg-red-600" id="book_ticket">Book Tickets</button>
+    
+                    <!-- Movie Details -->
+                    <div class="flex flex-col space-y-5">
+                        <h2 class="text-2xl md:text-3xl font-bold movie-title text-white">Movie Title</h2>
+                        <div class="flex items-center space-x-2 bg-slate-900 px-4 py-2 rounded-md font-semibold">
+                            <span class="text-yellow-500 text-2xl"><i class="fa-solid fa-star"></i></span>
+                            <span class="text-xl text-white movie-rating">8.5</span>
+                            <span class="text-gray-300 text-sm">(Votes)</span>
+                            <button class="bg-white text-black px-4 py-2 rounded-lg font-semibold">Rate Now</button>
+                        </div>
+    
+                        <div class="flex space-x-4">
+                            <span class="bg-white px-3 py-1 rounded-sm text-md quality"></span>
+                            <span class="bg-white px-3 py-1 rounded-sm text-md movie-language"></span>
+                        </div>
+    
+                        <p class="text-gray-300 text-sm md:text-lg mt-2 font-bold movie-details">Brief details about the movie...</p>
+    
+                        <div class="mt-4 md:mt-10">
+                            <button class="bg-red-500 text-white px-6 py-2 rounded-md font-semibold hover:bg-red-600" id="book_ticket">Book Tickets</button>
+                        </div>
                     </div>
                 </div>
             </div>
+    
+            <!-- Trailer Section as Background -->
+            <div class="trailer-section w-full md:w-1/2 h-64 md:h-auto relative bg-black">
+                <iframe src=""
+                    title="Movie Trailer"
+                    class="absolute top-0 left-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
+    
 
     <!-- Synopsis Section -->
     <section class="max-w-6xl mx-auto p-6 lg:px-8">
@@ -64,50 +94,27 @@
         <p class="text-gray-700 movie-synopsis"></p>
     </section>
 
-    <!-- Cast Section -->
-    <section class="max-w-6xl mx-auto p-6 lg:px-8">
-        <h3 class="text-2xl font-bold text-black-800 mb-4">Cast</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 cast-section">
-            <!-- Cast members will be dynamically added here -->
-        </div>
-    </section>
-
-    <!-- Crew Section -->
-    <section class="max-w-6xl mx-auto p-6 lg:px-8">
-        <h3 class="text-2xl font-bold text-black-800 mb-4">Crew</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 crew-section">
-            <!-- Crew members will be dynamically added here -->
-        </div>
-    </section>
-
     <!-- User Ratings & Reviews Section -->
-    <section class="max-w-6xl mx-auto p-6 lg:px-8">
-        <h3 class="text-2xl font-bold text-gray-800 mb-4">User Ratings & Reviews</h3>
-        <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-lg font-semibold text-yellow-500 mb-2">4.5 / 5.0</p>
-            <p class="text-gray-700">Based on 1,234 reviews</p>
-        </div>
-        <!-- Example Review -->
-        <div class="mt-4 space-y-4">
-            <div class="bg-gray-100 p-4 rounded-lg">
-                <p class="font-semibold text-gray-800">User Name</p>
-                <p class="text-gray-700">"Amazing movie with stunning visuals and a gripping storyline!"</p>
-            </div>
-        </div>
-    </section>
 
     <!-- Show Timings & Booking Section -->
-    <section class="max-w-6xl mx-auto p-6 lg:px-8">
+    <!-- <section class="max-w-6xl mx-auto p-6 lg:px-8">
         <h3 class="text-2xl font-bold text-gray-800 mb-4">Show Timings</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <!-- Show Timing Card -->
-            <div class="bg-gray-100 p-4 rounded-lg text-center">
-                <p class="font-semibold text-gray-800">Location Name</p>
-                <p class="text-gray-600">10:00 AM, 1:00 PM, 4:00 PM, 7:00 PM</p>
-                <button class="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg">Book Now</button>
-            </div>
+            < Show Timing Card -->
+            <!-- <div class="bg-gray-100 p-4 rounded-lg text-center">
+                <p class="font-semibold text-gray-800">Location Name</p> -->
+                <!-- <p class="text-gray-600">10:00 AM, 1:00 PM, 4:00 PM, 7:00 PM</p> -->
+                <!-- <button class="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg" id="book_ticket1">Book Now</button> -->
+            </div> 
         </div>
+    </section> 
+
+    <!-- story line Section -->
+    <section class="max-w-6xl mx-auto p-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Storyline</h3>
+        <p class="text-gray-700 movie-storyLine"></p>
     </section>
+
 </body>
 </html>
 
