@@ -1,13 +1,13 @@
 import fetchMovieData from "./fetchMovieData.js";
 
-let api_url = `https://movie-pass-c5a96-default-rtdb.firebaseio.com/`;
+// let api_url = `https://movie-pass-c5a96-default-rtdb.firebaseio.com/MovieData.json`;
 
 let moviesData;
 if(localStorage.getItem("moviesData")) {
     moviesData = JSON.parse(localStorage.getItem("moviesData"));
 }
 else{
-    moviesData = await fetchMovieData(api_url);
+    moviesData = await fetchMovieData();
     localStorage.setItem("moviesData", JSON.stringify(moviesData));
 }
 console.log(moviesData);
@@ -24,26 +24,42 @@ displayMovies(moviesData);
 //         console.log("Something went wrong with fetching API", error.message);
 //     }
 // }
+// async function fetchMovieData() {
+//     try {
+//         const response = await fetch(api_url);
+//         const movies = await response.json();
+//         displayMovies(movies);
+//     } catch (error) {
+//         console.log("Something went wrong with fetching API", error.message);
+//     }
+// }
 
 function displayMovies(movies) {
     const movieGrid = document.getElementById("movieGrid");
-    movieGrid.innerHTML = "";
+    movieGrid.innerHTML = "";  // Clear any existing movie cards
 
     movies.forEach(movie => {
         const movieCard = document.createElement("div");
-        movieCard.classList = "bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 cursor-pointer";
+        // Add the glass-card class to apply glassmorphism
+        movieCard.classList.add("glass-card");  // This applies the custom glassmorphism class
+        movieCard.classList.add("cursor-pointer"); 
         
         movieCard.addEventListener("click", () => {
             window.location.href = `movie_detail.html?movieId=${movie.movieId}`;
         });
 
         movieCard.innerHTML = `
-            <img src="${movie.poster}" alt="${movie.movie_title}" class="w-full h-48 object-cover rounded-t-lg mb-4" />
-            <p class="font-semibold text-lg">${movie.movie_title}</p>
-            <p class="text-gray-600">${movie.genre} | ${movie.quality}</p>
+            <div class="image-container">
+                <img src="${movie.poster}" alt="${movie.movie_title}" class="w-full h-64 object-scale-down rounded-t-lg mb-4" />
+            </div>
+            <div class="flex-1">
+                <p class="font-semibold text-lg text-white truncate text-center">${movie.movie_title}</p>
+                <p class="text-white text-sm truncate text-center">${movie.genre} | ${movie.quality}</p>
+            </div>
         `;
 
-        movieGrid.appendChild(movieCard);
+        movieGrid.appendChild(movieCard);  // Append the card to the grid
     });
 }
 
+fetchMovieData();  // Call the function to load the movie data
