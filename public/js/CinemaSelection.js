@@ -3,21 +3,21 @@ import fetchMovieData from "./fetchMovieData.js";
 let api_url = `https://movie-pass-c5a96-default-rtdb.firebaseio.com/`;
 
 let moviesData;
-if(localStorage.getItem("moviesData")) {
+// Check localStorage for cached movie data
+if (localStorage.getItem("moviesData")) {
     moviesData = JSON.parse(localStorage.getItem("moviesData"));
-}
-else{
+} else {
     moviesData = await fetchMovieData(api_url);
     localStorage.setItem("moviesData", JSON.stringify(moviesData));
 }
 
-
 // Parse movieId from the URL
 const params = new URLSearchParams(window.location.search);
-const movieId = params.get('movieId');
+const movieId = params.get("movieId");
 
-const movieData = moviesData.find(movie => movie.movieId == movieId);
-console.log(movieData);
+const movieData = moviesData.find(movie => movie.movieId === movieId);
+
+
 if (movieData && movieData.theatres) {
     const theatres = movieData.theatres;
     displayTheatres(theatres);
@@ -25,52 +25,85 @@ if (movieData && movieData.theatres) {
     console.error("No theaters found for the movie.");
 }
 
+function getCurrentDateFormatted() {
+    const today = new Date();
 
+    // Get weekday name
+    const options = { weekday: "long", day: "numeric", month: "long", year: "numeric" };
+    const formattedDate = today.toLocaleDateString("en-US", options);
+
+    return formattedDate;
+}
+
+// Example usage
+const currentDate = getCurrentDateFormatted();
+
+document.querySelector(".movie-title").textContent = movieData.movie_title;
+document.querySelector(".movie-details").textContent = `${movieData.duration} mins • ${movieData.genre} • ${movieData.language} • ${movieData.release_date}`;;
+
+document.querySelector(".movie-poster").src=movieData.poster;
+document.querySelector(".movie-date").textContent = currentDate;
 // Function to display theaters
 function displayTheatres(theatres) {
     const theatreContainer = document.getElementById("theater-container");
-    theatreContainer.innerHTML = "";
-    const slots = ["09:00 AM", "2:00 PM", "9:00 PM"];
+    const slots = ["09:00 AM", "14:00 PM", "21:00 PM"];
 
     theatres.forEach((theatre, theaterIndex) => {
+        // Create theater card
         const theatreElement = document.createElement("div");
-        theatreElement.classList.add("cinema");
+        theatreElement.classList.add(
+            "bg-gray-700",
+            "p-4",
+            "rounded-lg",
+            "shadow-md",
+            "space-y-4"
+        );
 
-        // Create time slots dynamically
-        const timeSlotsContainer = document.createElement("div");
-        timeSlotsContainer.classList.add("time-slots");
-
-        slots.forEach((slot, slotIndex) => {
-            const slotElement = document.createElement("div");
-            slotElement.classList.add("time-slot");
-            slotElement.textContent = slot;
-
-            // Attach click event listener to each time slot
-            slotElement.addEventListener("click", () => {
-                redirectToBookingPage(theaterIndex, slotIndex);
-            });
-
-            timeSlotsContainer.appendChild(slotElement);
-        });
-
-        theatreElement.innerHTML = `
-            <div class="cinema-info">
-                <div class="cinema-name">${theatre.name} - ${theatre.location}</div>
-                <button class="select-btn">
-                    Select Cinema
-                </button>
+        // Theater info
+        const theaterInfo = `
+            <div>
+                <h3 class="text-xl font-semibold">${theatre.name} - ${theatre.location}</h3>
             </div>
-            <div class="cinema-options">
+            <div class="flex gap-4 text-sm text-gray-400">
                 <span>Parking Available</span>
                 <span>Dolby Surround Sound</span>
                 <span>Online Booking</span>
             </div>
         `;
+        theatreElement.innerHTML = theaterInfo;
 
-        // Attach click event listener to the "Select Cinema" button
-        const selectCinemaButton = theatreElement.querySelector(".select-btn");
-        selectCinemaButton.addEventListener("click", () => {
-            redirectToBookingPage(theaterIndex, null);
+        // Time slots
+        const timeSlotsContainer = document.createElement("div");
+        timeSlotsContainer.classList.add("flex", "flex-wrap", "gap-2");
+        const now = new Date();
+        const currentTime = now.toTimeString().slice(0, 5);
+        slots.forEach((slot, slotIndex) => {
+            const slotElement = document.createElement("button");
+            slotElement.classList.add(
+                "bg-gray-600",
+                "hover:bg-blue-500",
+                "text-white",
+                "px-4",
+                "py-2",
+                "rounded-lg",
+                "cursor-pointer",
+                "text-sm",
+                "font-medium"
+            );
+            slotElement.textContent = slot;
+            let slotTime = slot.slice(0, 5);
+            console.log(currentTime,slotTime);
+            if(slotTime < currentTime){
+                console.log("disabled");
+                slotElement.disabled = true;
+            }
+
+            // Event listener for time slot click
+            slotElement.addEventListener("click", () => {
+                redirectToBookingPage(theaterIndex, slotIndex);
+            });
+
+            timeSlotsContainer.appendChild(slotElement);
         });
 
         theatreElement.appendChild(timeSlotsContainer);
@@ -79,10 +112,7 @@ function displayTheatres(theatres) {
 }
 
 // Function to handle redirection
-const redirectToBookingPage = (theaterId, showId) => {
+function redirectToBookingPage(theaterId, showId) {
     const bookingUrl = `SeatSelection.html?theaterId=${theaterId}&showId=${showId}&movieId=${movieId}`;
     window.location.href = bookingUrl;
-};
-
-// Fetch theater data on page load
-// fetchTheatreData();
+}
