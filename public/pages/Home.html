@@ -1,199 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <style>
-      .menu-button {
-         font-size: 30px;
-         cursor: pointer;
-         color: #010000;
-         padding: 5px;
-     }
-     .menu-button:hover{
-       transform: scale(1.1);
-     }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Booking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <style>
+    /* Menu button and dropdown styles */
+    
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-     .dropdown-menu {
-         display: none;
-         position: absolute;
-         top: 100px;
-         right: -250px; /* Start from the right, offscreen */
-         background-color: #fff;
-         border-radius: 5px;
-         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-         width: 350px;
-         color: #333;
-         overflow: hidden;
-         opacity: 0;
-         /* transform: translateX(100%); */
-         transition:  all 1s ease-in-out; 
-         z-index: 1;
-     }
+    body {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  font-family: "Work Sans", sans-serif;
+}
 
-     .dropdown-menu.show {
-         display: block;
-         opacity: 1;
-         transform: translateX(0); /* Slide in from the right */
-         right: 10px;
-     }
+    .menu-button {
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+      padding: 5px;
+    }
+    .menu-button:hover {
+      transform: scale(1.1);
+    }
 
-     .menu-item {
-         display: flex;
-         align-items: center;
-         padding: 12px 15px;
-         border-bottom: 1px solid #ddd;
-         cursor: pointer;
-     }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100px;
+      right: -250px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      width: 350px;
+      color: #333;
+      overflow: hidden;
+      opacity: 0;
+      transition: all 1s ease-in-out;
+      z-index: 1;
+    }
 
-     .menu-item:last-child {
-         border-bottom: none;
-     }
+    .dropdown-menu.show {
+      display: block;
+      opacity: 1;
+      transform: translateX(0);
+      right: 10px;
+    }
 
-     .menu-item:hover {
-         background-color: #f2f2f2;
-     }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+    }
 
-     .icon {
-         font-size: 20px;
-         margin-right: 10px;
-         color: #757070;
-     }
+    .menu-item:last-child {
+      border-bottom: none;
+    }
 
-     .menu-title {
-         flex-grow: 1;
-     }
+    .menu-item:hover {
+      background-color: #f2f2f2;
+    }
 
-     .arrow {
-         color: #aaa;
-     }
-   </style>
-    <!-- Tailwind CSS CDN link -->
-  </head>
+    .icon {
+      font-size: 20px;
+      margin-right: 10px;
+      color: #757070;
+    }
 
-  <body class="font-sans">
-    <div class="main bg-gray-50">
-    <div class="container ">
+    .menu-title {
+      flex-grow: 1;
+    }
+
+    .arrow {
+      color: #aaa;
+    }
+
+    /* Glassmorphism effect styles */
+    .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img {
+    filter: none; 
+}
+.glass-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+}
+
+/* Container for the background image section */
+.background-image-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;  /* Ensures no overflow of the image */
+}
+
+/* Create a wrapper for the image */
+.background-image-section .img-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Create the fading effect: Gradually disappear into the background */
+.background-image-section .img-wrap:before {
+    content: '';
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dark gradient from bottom to transparent */
+    position: absolute;
+    bottom: 0; /* Start at the bottom of the container */
+    left: 0;
+    right: 0;
+    height: 50%; /* This will control how much of the image fades */
+    z-index: 1; /* Ensure the gradient is on top of the image */
+}
+
+/* Ensure the image stays inside the wrapper and is responsive */
+.background-image-section .img-wrap img {
+    width: 100%;         /* Makes the image stretch to fill the width of the container */
+    height: 100%;        /* Makes sure the image covers the entire container */
+    display: block;      /* Prevents any unwanted spacing below the image */
+    object-fit: cover;   /* Ensures the image covers the container while maintaining aspect ratio */
+    position: relative;
+    z-index: 0; /* Keeps the image behind the gradient */
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .background-image-section {
+        background-position: center top; /* Focus the image on top for smaller screens */
+    }
+}
+
+/* For large screens */
+@media (min-width: 1200px) {
+    .background-image-section {
+        background-position: center; /* Keep image centered for large screens */
+    }
+}
+
+
+  </style>
+</head>
+
+<body class="bg-cover bg-center bg-black"  > <!-- style="background-image: url(../images/abstract-luxury-blur-dark-grey-black-gradient.jpg);" -->
+ 
+  <div class="main" >
+    <div class="container mx-auto px-4">
+      
       <!-- Nav-Bar -->
-      <div class="bg-white mx-auto px-28 mt-4 flex justify-between items-center p-4">
+
+      <div class="bg-transparent flex flex-wrap justify-between items-center " >
         <!-- Left side (logo + search input) -->
-        <div class="flex items-center space-x-4">
-          <img src="../images/movie-pass-11-12-2024.png" alt="" class="w-64 h-20 object-cover" />
+        <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto">
+          <img 
+    src="../images/movie-pass-11-16-2024.png" 
+    alt="Movie Pass Logo" 
+    class="w-32 h-12 sm:w-64 sm:h-20 object-fill mx-auto sm:mx-0 sm:flex sm:justify-center sm:align-bottom" 
+    onclick="window.location.href=window.location.href;" 
+/>
           <input
             id="search-content"
             type="text"
             placeholder="Search for Movies, Events, Plays, Sports and Activities"
-            class="p-2 w-96 h-10 rounded-lg border border-gray-300"
+            class="p-2 w-full sm:w-96 md:w-96 h-10 rounded-lg border border-gray-300 mt-5 sm:mt-"
           />
         </div>
 
         <!-- Right side (Sign In and Location dropdown) -->
-        <div class="flex items-center space-x-6">
+        <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto items-center">
           <!-- Location dropdown -->
-          <div class="relative">
-            <button
-              class="location-btn bg-pink-500 text-white py-2 px-4 rounded-md hover:bg-red-700 transition transform hover:scale-105"
-            >
-              Select Location
-            </button>
-            <div
-              class="location-dropdown-content hidden absolute bg-gray-100 min-w-40 rounded-md shadow-lg z-10 mt-1"
-            >
-              <a href="#" class="block py-3 px-4 text-black hover:bg-gray-300"
-                >New Delhi</a
-              >
-              <a href="#" class="block py-3 px-4 text-black hover:bg-gray-300"
-                >Hyderabad</a
-              >
-              <a href="#" class="block py-3 px-4 text-black hover:bg-gray-300"
-                >Chennai</a
-              >
-              <a href="#" class="block py-3 px-4 text-black hover:bg-gray-300"
-                >Lucknow</a
-              >
-              <a href="#" class="block py-3 px-4 text-black hover:bg-gray-300"
-                >Uttrakhand</a
-              >
-            </div>
+          <div>
+            <i class="fa-solid fa-location-dot text-white ml-2 mr-2 text-xl p-3"></i>
           </div>
+        <div>
           <!-- Sign In Button -->
-          <button
-            id="sign-in-btn"
-            class="bg-pink-500 text-white py-2 px-4 rounded-md hover:bg-red-700 transition transform hover:scale-105"
-          >
-            Sign In
-          </button>
-          <div class="menu-button" onclick="toggleMenu()">
-            <span>☰</span>
-          </div>
-          <div class="dropdown-menu" id="dropdownMenu">
-              <div class="menu-item">
-                  <i class="fas fa-bell icon"></i>
-                  <span class="menu-title">Notifications</span>
-                  <span class="arrow">➔</span>
-              </div>
-              <div class="menu-item">
-                  <i class="fas fa-box icon"></i>
-                  <span class="menu-title">Your Orders</span>
-                  <span class="arrow">➔</span>
-              </div>
-              <div class="menu-item">
-                  <i class="fas fa-calendar-alt icon"></i>
-                  <span class="menu-title">Book a Change</span>
-                  <span class="arrow">➔</span>
-              </div>
-              <div class="menu-item">
-                  <i class="fas fa-user icon"></i>
-                  <span class="menu-title">Profile</span>
-                  <span class="arrow">➔</span>
-              </div>
-              <div class="menu-item">
-                  <i class="fas fa-cog icon"></i>
-                  <span class="menu-title">Settings</span>
-                  <span class="arrow">➔</span>
-              </div>
-              <div class="menu-item">
-                  <i class="fas fa-sign-out-alt icon"></i>
-                  <span class="menu-title">Log Out</span>
-                  <span class="arrow">➔</span>
-              </div>
-          </div>
+          <i class="user fa-solid fa-user text-white ml-2 mr-2 text-xl p-3"></i>
         </div>
+        </div>
+        
       </div>
 
       <!-- Header -->
-      <div class="mx-auto px-28 mt-4 flex justify-between items-center p-4 bg-gray-100 mb-20 border">
-        <div class="flex items-center space-x-8">
-          <a href="#" class="text-lg font-medium">Movies</a>
+      
+      <!-- Corousal-->
+      
+      <div class="background-image-section">
+        <div class="img-wrap">
+            <img src="https://images.alphacoders.com/117/thumb-1920-1177950.jpg" alt="Responsive Image">
         </div>
-        <div class="flex items-center space-x-8">
-          <a href="#" class="text-lg font-medium">About Us</a>
-          <a href="#" class="text-lg font-medium">Help Desk</a>
-        </div>
-      </div>
+    </div>
 
       <!-- Contents Section -->
-      <div class=" mx-auto px-28 flex justify-between">
-        <!-- Left Section (Filters) -->
-        <div class="mr-5 w-1/4 flex flex-col">
-          <p class="text-2xl font-semibold mb-4">Filters</p>
-          <div class="space-y-4">
-            <div class="relative">
-              <select
-                id="language-select"
-                name="language"
-                class="w-full p-2 rounded-lg border border-gray-300"
-              >
+        <div class="w-full z-10">
+          <div class="space-y-4 flex flex-col md:flex-row justify-center gap-25 sm:gap-25 md:gap-40 lg:gap-48">
+            <!-- Language Dropdown -->
+            <div class="flex justify-center items-center w-full md:w-auto mt-4">
+              <select id="language-select" name="language" class="w-full sm:w-48 md:w-40 p-3 rounded-lg border bg-white/30 backdrop-blur-md text-black shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
                 <option value="" disabled selected>Language</option>
                 <option value="english">English</option>
                 <option value="spanish">Spanish</option>
@@ -201,13 +223,10 @@
                 <option value="german">German</option>
               </select>
             </div>
-
-            <div class="relative">
-              <select
-                id="genre-select"
-                name="genre"
-                class="w-full p-2 rounded-lg border border-gray-300"
-              >
+          
+            <!-- Genre Dropdown -->
+            <div class="flex justify-center items-center w-full md:w-auto">
+              <select id="genre-select" name="genre" class="w-full sm:w-48 md:w-40 p-3 rounded-lg border bg-white/30 backdrop-blur-md text-black shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
                 <option value="" disabled selected>Genre</option>
                 <option value="action">Action</option>
                 <option value="comedy">Comedy</option>
@@ -215,13 +234,10 @@
                 <option value="horror">Horror</option>
               </select>
             </div>
-
-            <div class="relative">
-              <select
-                id="format-select"
-                name="format"
-                class="w-full p-2 rounded-lg border border-gray-300"
-              >
+          
+            <!-- Format Dropdown -->
+            <div class="flex justify-center items-center w-full md:w-auto">
+              <select id="format-select" name="format" class="w-full sm:w-48 md:w-40 p-3 rounded-lg border bg-white/30 backdrop-blur-md text-black shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
                 <option value="" disabled selected>Format</option>
                 <option value="hd">HD</option>
                 <option value="4k">4K</option>
@@ -230,108 +246,35 @@
               </select>
             </div>
           </div>
+          
+            <p class="text-2xl text-white font-semibold mb-6">Movies <i class="fa-solid fa-film"></i></p>
+    
+            <!-- Grid for Movie Cards -->
+            <div id="movieGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" style="background-image: url('../images/abstract-luxury-blur-dark-grey-black-gradient.jpg');">
+              <!-- Movie cards will be dynamically added here -->
+          </div>          
         </div>
-        <!-- Right Section (Movies) -->
-        <div class="w-3/4">
-          <p class="text-2xl font-semibold mb-6">Movies</p>
+    </div>
+    
+      <div class="mx-auto h-20 mt-20 flex justify-between items-center bg-gray-100 border"></div>
 
-          <!-- Grid for Movie Cards -->
-          <div id="movieGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          </div>
-        </div>
-      </div>
-      <!-- End-Header -->
-      <div class="mx-auto h-20 mt-20 flex justify-between items-center bg-gray-100 border">
-      </div>
       <!-- Mini Footer Section -->
-      <div class="mx-auto px-28 py-8 ">
+      <div class="mx-auto px-28 py-8 text-white">
         <div class="container mx-auto text-center">
-          <!-- Title/Heading -->
           <p class="text-lg font-semibold mb-4">
             Enjoy Online Ticket Booking for Movies
           </p>
-
-          <!-- Content -->
           <p class="text-sm mb-4">
-            If you are planning for movie ticket bookings for the latest movies
-            in Mumbai, don't look any further. Now it is easy to get on with
-            online ticket booking with BookMyShow. Your one-stop solution for
-            movies to watch this weekend.
-          </p>
-
-          <p class="text-sm mb-4">
-            Everyone enjoys watching their favorite movies on the big screen,
-            and the excitement of watching it with friends is unparalleled. If
-            you have been eagerly waiting for a movie that you can watch with
-            your friends and family, now you know where to get the tickets from.
-          </p>
-
-          <p class="text-sm mb-4">
-            When you watch film in a cinema theatre, you get to watch it on a
-            massive screen with surround-sound, and that enhances your
-            movie-watching experience. Thus, allowing you to be a part of the
-            actual movie. Get to know about all movies and movie trailers to
-            watch here. Also, know how to book movie tickets.
-          </p>
-
-          <!-- Upcoming Section -->
-          <p class="text-lg font-semibold mb-4">
-            Latest Movies To Watch in NCR
-          </p>
-          <p class="text-sm mb-4">
-            Each year the cinema world is enlightened with the latest movie
-            trailers, increasing the excitement among everyone. Don't miss out
-            on the biggest Bollywood movies to be released with the biggest star
-            cast!
-          </p>
-
-          <p class="text-sm mb-4">
-            Be a part of everyone's reaction. Dates are already announced, and
-            all you need to do is book the tickets for your preferred date so
-            that you don't end up missing the first-day first show!
-          </p>
-
-          <p class="text-sm mb-4">
-            Check out the latest movie trailers here and book tickets now for a
-            memorable cinema experience!
-          </p>
-
-          <!-- Exciting Section -->
-          <p class="text-lg font-semibold mb-4">
-            Exciting Tollywood & Kollywood Movies
-          </p>
-          <p class="text-sm mb-4">
-            Just like Bollywood and Hollywood movies, Tollywood seems to have a
-            few good movie showtimes as well. You can plan for movies to watch
-            this Friday with these Tollywood movies. The star cast is superb,
-            and the storylines are already making news!
-          </p>
-
-          <p class="text-sm mb-4">
-            Keep an eye on the release date and be ready for the ultimate
-            cinematic experience!
-          </p>
-
-          <!-- Call to Action -->
-          <p class="text-lg font-semibold mb-4">
-            The Joy of Movie Ticket Booking
-          </p>
-          <p class="text-sm mb-4">
-            Grab on your popcorn because there are many movies to watch today.
-            If you want to save some money, don't miss out on our movie offers
-            and discounts. Check out the movies running in cinemas and book your
-            tickets now!
-          </p>
-
-          <p class="text-sm mb-4">
-            Your access to your favourite movie is only a click away. Book your
-            movie tickets from BookMyShow today at the best price!
+            If you are planning for movie ticket bookings for the latest movies...
           </p>
         </div>
       </div>
     </div>
   </div>
-  </body>
+</body>
 </html>
 
 <script src="../js/home.js" type="module"></script>
+<script src="https://kit.fontawesome.com/5422a0d9bf.js" crossorigin="anonymous"></script>
+
+  
