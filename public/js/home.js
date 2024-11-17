@@ -1,15 +1,29 @@
-let api_url = `https://movie-pass-cbe6a-default-rtdb.firebaseio.com/MovieData.json`;
+import fetchMovieData from "./fetchMovieData.js";
 
-async function fetchMovieData() {
-    try {
-        const response = await fetch(api_url);
-        const movies = await response.json();
+let api_url = `https://movie-pass-c5a96-default-rtdb.firebaseio.com/`;
 
-        displayMovies(movies);
-    } catch (error) {
-        console.log("Something went wrong with fetching API", error.message);
-    }
+let moviesData;
+if(localStorage.getItem("moviesData")) {
+    moviesData = JSON.parse(localStorage.getItem("moviesData"));
 }
+else{
+    moviesData = await fetchMovieData(api_url);
+    localStorage.setItem("moviesData", JSON.stringify(moviesData));
+}
+console.log(moviesData);
+console.log(moviesData.length);
+console.log(moviesData[0].theatres);
+displayMovies(moviesData);
+// async function fetchMovieData() {
+//     try {
+//         const response = await fetch(api_url);
+//         const movies = await response.json();
+
+//         displayMovies(movies);
+//     } catch (error) {
+//         console.log("Something went wrong with fetching API", error.message);
+//     }
+// }
 
 function displayMovies(movies) {
     const movieGrid = document.getElementById("movieGrid");
@@ -33,4 +47,3 @@ function displayMovies(movies) {
     });
 }
 
-fetchMovieData();
