@@ -142,3 +142,59 @@ z-index: 0; /* Keeps the image behind the gradient */
     background-position: center; /* Keep image centered for large screens */
 }
 }
+
+
+
+
+/* Transparent Search Bar */
+#search-content {
+  background-color: rgba(0, 0, 0, 0.3); /* Transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+  color: white; /* Text color */
+  padding: 12px; /* Padding for better user experience */
+  font-size: 1rem;
+  border-radius: 8px;
+  outline: none; /* Remove default outline */
+  transition: background-color 0.3s ease;
+}
+
+#search-content:focus {
+  background-color: rgba(0, 0, 0, 0.5); /* Darken background on focus */
+  border-color: rgba(255, 255, 255, 0.7); /* Darker border on focus */
+}
+
+/* Dark Select Dropdown */
+select {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background for select */
+  color: white; /* Text color */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  outline: none; /* Remove default outline */
+  transition: background-color 0.3s ease;
+}
+
+select:focus {
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background on focus */
+  border-color: rgba(255, 255, 255, 0.5); /* Darker border on focus */
+}
+
+select option {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for options */
+  color: white ; /* Text color for options */
+}
+
+/* Reset button styling */
+#reset-filters {
+  background-color: #d9534f; /* Red background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#reset-filters:hover {
+  background-color: #c9302c; /* Darker red when hovered */
+}

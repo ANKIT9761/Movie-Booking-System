@@ -46,7 +46,7 @@ document.querySelector(".movie-date").textContent = currentDate;
 // Function to display theaters
 function displayTheatres(theatres) {
     const theatreContainer = document.getElementById("theater-container");
-    const slots = ["09:00 AM", "14:00 PM", "21:00 PM"];
+    const slots = ["09:00 AM", "14:00 PM", "23:00 PM"];
 
     theatres.forEach((theatre, theaterIndex) => {
         // Create theater card

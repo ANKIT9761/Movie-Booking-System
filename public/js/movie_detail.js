@@ -10,19 +10,16 @@ else{
     moviesData = await fetchMovieData(api_url);
     localStorage.setItem("moviesData", JSON.stringify(moviesData));
 }
-
-
-
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('movieId');
 
 const movie = moviesData.find(movie => movie.movieId == movieId);
+console.log(movie.trailer)
 if (movie) {
     displayMovies(movie);
 } else {
     console.log("Movie not found");
 }
-
 
 function displayMovies(movie) {
     document.querySelector(".trailer-section iframe").src = `${movie.trailer}`;

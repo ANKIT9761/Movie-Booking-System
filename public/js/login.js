@@ -22,29 +22,11 @@ function login(event) {
     fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`, requestOptions)
         .then(resp => resp.json())
         .then(res => {
-            if (res.idToken) {
-                    new Notify({
-                        title: "Login Successfully",
-                        status: "success",
-                        effect: "fade",
-                        speed: 300,
-                        customClass: null,
-                        customIcon: null,
-                        showIcon: true,
-                        showCloseButton: true,
-                        autoclose: true,
-                        autotimeout: 3000,
-                        gap: 20,
-                        distance: 20,
-                        type: "outline",
-                        position: "right top",
-                    });
-                  setTimeout(() => {
-                    window.location.href = "../pages/Home.html";
-                  },4000);
-
+            if (res.idToken) 
+            {
+                localStorage.setItem("user", JSON.stringify(email))
+                window.location.href = "home.html";
             } else {
-                // Handle login error
                 alert(res.error.message || "Login failed");
             }
         })
