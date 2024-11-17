@@ -21,12 +21,14 @@ const movieIndex = parseInt(movieId.slice(1), 10)-1;
 
 const movieData = moviesData.find(movie => movie.movieId == movieId);
 
+const slots = ["09:00 AM", "14:00 PM", "23:00 PM"];
+
 const seats=movieData.theatres[theaterId].shows[showId].seats;
 console.log(seats);
 
 document.querySelector(".movie-title").textContent = movieData.movie_title;
 document.querySelector(".movie-details").textContent = `${movieData.duration} mins • ${movieData.genre} • ${movieData.language} • ${movieData.release_date}`;;
-document.querySelector(".show-timing").textContent = movieData.theatres[theaterId].shows[showId].time;
+document.querySelector(".show-timing").textContent = slots[showId];
 
 document.querySelector(".movie-poster").src=movieData.poster;
 
