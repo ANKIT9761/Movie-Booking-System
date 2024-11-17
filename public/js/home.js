@@ -1,13 +1,13 @@
 import fetchMovieData from "./fetchMovieData.js";
 
-let api_url = `https://movie-pass-c5a96-default-rtdb.firebaseio.com/MovieData.json`;
+// let api_url = `https://movie-pass-c5a96-default-rtdb.firebaseio.com/MovieData.json`;
 
 let moviesData;
 if(localStorage.getItem("moviesData")) {
     moviesData = JSON.parse(localStorage.getItem("moviesData"));
 }
 else{
-    moviesData = await fetchMovieData(api_url);
+    moviesData = await fetchMovieData();
     localStorage.setItem("moviesData", JSON.stringify(moviesData));
 }
 console.log(moviesData);
