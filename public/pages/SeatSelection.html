@@ -3,136 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Seating Layout</title>
-  <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+  <title>Movie Booking</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .seat {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #ddd; /* Border for visibility */
-      cursor: pointer;
-      border-radius: 4px; /* Slight rounding for aesthetics */
-      font-size: 14px;
-      font-weight: bold;
-      color: #333;
-    }
-    .available {
-      color: #3b82f6;
-    }
-    .selected {
-      background-color: #4caf50; /* Selected seat color */
-      color: #fff;
-    }
-    .booked {
-      background-color: #ccc; /* Booked seat color */
+    button:disabled {
+      opacity: 0.5;
       cursor: not-allowed;
+      pointer-events: none;
     }
   </style>
 </head>
-<body class="bg-gray-100 p-6">
-  <div class="max-w-2xl mx-auto bg-white p-4 rounded-lg shadow-lg">
-    <!-- Top Section with Movie Details -->
-    <div class="text-center mb-4">
-      <h2 class="text-lg font-bold">Bhool Bhulaiyaa 3 - Hindi</h2>
-      <p class="text-gray-600">Today, 13 Nov, 12:35 PM at PVR Vegas, Dwarka, New Delhi</p>
-    </div>
+<body class="bg-gray-900 text-white">
+  <div class="min-h-screen flex flex-col items-center py-10">
+    <!-- Header -->
+    <header class="text-center">
+      <h1 class="text-3xl font-bold movie-title"></h1>
+      <p class="text-sm mt-1 movie-details"></p>
+    </header>
 
-    <!-- Show Timings -->
-    <div class="flex justify-around mb-4">
-      <button class="text-sm py-4 px-8 border rounded-md hover:bg-gray-200"><span class="text-xl font-medium">9:00 AM</span> <br> 2D</button>
-      <button class="text-sm py-4 px-8 border rounded-md hover:bg-gray-200"><span class="text-xl font-medium">2:00 PM</span> <br> 2D</button>
-      <button class="text-sm py-4 px-8 bg-blue-500 text-white rounded-lg"><span class="text-xl font-medium">9:00 PM</span> <br> 2D</button>
-    </div>
-
-    <!-- Legend -->
-    <div class="flex justify-center gap-4 mb-4">
-      <div class="flex items-center">
-        <div class="w-4 h-4 bg-blue-500 rounded mr-1"></div> <span>Available</span>
+    <!-- Main Content -->
+    <div class="mt-10 flex flex-wrap lg:flex-nowrap items-start justify-center gap-10 w-full px-4">
+      <!-- Movie Poster -->
+      <div class="flex-shrink-0">
+        <img src="" alt="A Silent Voice Poster" class="w-72 h-auto rounded-lg shadow-lg movie-poster">
       </div>
-      <div class="flex items-center">
-        <div class="w-4 h-4 bg-gray-300 rounded mr-1"></div> <span>Booked</span>
-      </div>
-      <div class="flex items-center">
-        <div class="w-4 h-4 bg-green-500 rounded mr-1"></div> <span>Selected</span>
-      </div>
-    </div>
 
-    <!-- Seat Layout -->
-    <div class="space-y-4">
-      <!-- Luxe Seats -->
-      <div class="grid grid-cols-10 gap-2">
-        <div class="seat available">1</div>
-        <div class="seat available">2</div>
-        <div class="seat available">3</div>
-        <div class="seat available">4</div>
-        <div class="seat available">5</div>
-        <div class="seat available">6</div>
-        <div class="seat available">7</div>
-        <div class="seat available">8</div>
-        <div class="seat available">9</div>
-        <div class="seat available">10</div>
+      <!-- Booking Section -->
+      <div class="w-full max-w-lg">
+        <!-- Screening Time -->
+        <div class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Show Timing</h2>
+          <span class="px-4 py-2 bg-gray-800 rounded-lg hover:bg-blue-600 show-timing">9:00 AM</span>
+        </div>
 
-        <!-- Repeat rows as needed -->
-        <div class="seat available">1</div>
-        <div class="seat available">2</div>
-        <div class="seat available">3</div>
-        <div class="seat available">4</div>
-        <div class="seat available">5</div>
-        <div class="seat available">6</div>
-        <div class="seat available">7</div>
-        <div class="seat available">8</div>
-        <div class="seat available">9</div>
-        <div class="seat available">10</div>
-        
-        <!-- Additional rows for the "LUXE" section if required -->
+        <!-- Seat Selection -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">Pick Your Seats</h2>
+            <!-- Dynamically Generated Seats -->
+            <div id="seats" class="grid grid-cols-10 gap-2"></div>
+          
+        </div>
 
-        <div class="seat available">1</div>
-        <div class="seat available">2</div>
-        <div class="seat available">3</div>
-        <div class="seat available">4</div>
-        <div class="seat available">5</div>
-        <div class="seat available">6</div>
-        <div class="seat available">7</div>
-        <div class="seat available">8</div>
-        <div class="seat available">9</div>
-        <div class="seat available">10</div>
-
-        <div class="seat available">1</div>
-        <div class="seat available">2</div>
-        <div class="seat available">3</div>
-        <div class="seat available">4</div>
-        <div class="seat available">5</div>
-        <div class="seat available">6</div>
-        <div class="seat available">7</div>
-        <div class="seat available">8</div>
-        <div class="seat available">9</div>
-        <div class="seat available">10</div>
-
-        <div class="seat available">1</div>
-        <div class="seat available">2</div>
-        <div class="seat available">3</div>
-        <div class="seat available">4</div>
-        <div class="seat available">5</div>
-        <div class="seat available">6</div>
-        <div class="seat available">7</div>
-        <div class="seat available">8</div>
-        <div class="seat available">9</div>
-        <div class="seat available">10</div>
+        <!-- Book Tickets Button -->
+        <div class="mt-8 text-center">
+          <button id="bookBtn" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            Book Tickets
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- Screen -->
-    <div class="text-center mt-6 flex justify-center">
-      <img src="https://assetscdn1.paytm.com/movies_new/_next/static/media/screen-icon.8dd7f126.svg" alt="" srcset="">
-    </div>
   </div>
 
-  <script src="../js/SeatSelection.js"></script>
+  <script src="../js/SeatSelection.js" type="module">
+
+  </script>
 </body>
 </html>

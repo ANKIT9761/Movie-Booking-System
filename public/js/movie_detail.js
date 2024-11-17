@@ -1,24 +1,28 @@
+import fetchMovieData from "./fetchMovieData.js";
+
+let api_url = `https://movie-pass-c5a96-default-rtdb.firebaseio.com/`;
+
+let moviesData;
+if(localStorage.getItem("moviesData")) {
+    moviesData = JSON.parse(localStorage.getItem("moviesData"));
+}
+else{
+    moviesData = await fetchMovieData(api_url);
+    localStorage.setItem("moviesData", JSON.stringify(moviesData));
+}
+
+
+
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('movieId');
 
-async function fetchMovieData() {
-    const api_url = `https://movie-pass-cbe6a-default-rtdb.firebaseio.com/MovieData.json`;
-
-    try {
-        const response = await fetch(api_url);
-        const data = await response.json();
-
-        const movie = data.find(movie => movie.movieId == movieId);
-        if (movie) {
-            displayMovies(movie);
-        } else {
-            console.log("Movie not found");
-        }
-
-    } catch (error) {
-        console.log("Something went wrong with fetching API", error.message);
-    }
+const movie = moviesData.find(movie => movie.movieId == movieId);
+if (movie) {
+    displayMovies(movie);
+} else {
+    console.log("Movie not found");
 }
+
 
 function displayMovies(movie) {
     document.querySelector(".trailer-section iframe").src = `${movie.trailer}`;
@@ -43,4 +47,4 @@ function SeatSelection()
     window.location.href = `CinemaSelection.html?movieId=${movieId}`
 }
 
-fetchMovieData();
+
