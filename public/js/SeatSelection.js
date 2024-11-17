@@ -68,7 +68,7 @@ const seatsContainer = document.getElementById('seats');
     // Book button action
     document.getElementById('bookBtn').onclick = async () => {
       if (selectedSeats.size > 0) {
-        alert(`You have booked the following seats: ${[...selectedSeats].join(', ')}`);
+        // alert(`You have booked the following seats: ${[...selectedSeats].join(', ')}`);
         selectedSeats.forEach(seat => {
         let row=Math.floor((seat-1)/10);
         let col=(seat-1)%10;
@@ -82,8 +82,28 @@ const seatsContainer = document.getElementById('seats');
           },
           body: JSON.stringify({seats:seats})
         });
-        window.location.href = "../pages/Home.html";
+        new Notify({
+          title: "Tickets Booked Successfully",
+          text: "Thanks for Booking. See you in the Theatres 🎉.",
+          status: "success",
+          effect: "fade",
+          speed: 300,
+          customClass: null,
+          customIcon: null,
+          showIcon: true,
+          showCloseButton: true,
+          autoclose: true,
+          autotimeout: 3000,
+          gap: 20,
+          distance: 20,
+          type: "outline",
+          position: "right top",
+        });
+        
         localStorage.clear();
+        setTimeout(() => {
+          window.location.href = "../pages/Home.html";
+        },4000);
       } else {
         alert('Please select at least one seat to proceed.');
       }
