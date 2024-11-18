@@ -140,7 +140,7 @@ const seatsContainer = document.getElementById('seats');
           position: "right top",
         });
         
-        localStorage.clear();
+        localStorage.removeItem("moviesData");
         setTimeout(() => {
           window.location.href = "../pages/Home.html";
         },4000);
