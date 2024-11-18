@@ -1,11 +1,12 @@
 import fetchMovieData from "./fetchMovieData.js";
 
 let moviesData;
-const user = JSON.parse(localStorage.getItem("user")) 
 // Check for movies in localStorage or fetch new data
 if (localStorage.getItem("moviesData")) {
   moviesData = JSON.parse(localStorage.getItem("moviesData"));
-} else {
+} 
+else 
+{
   moviesData = await fetchMovieData();
   localStorage.setItem("moviesData", JSON.stringify(moviesData));
 }
@@ -35,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     profileContainer.innerHTML = `
       <div>
         <p class="font-semibold text-lg">${res.fullname}</p>
-        <p class="text-sm text-gray-400">${res.email}</p>
       </div>
       <button id="logout" class="text-white hover:bg-gray-800 p-2 rounded-md">Logout</button>
     `;

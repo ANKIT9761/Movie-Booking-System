@@ -1,5 +1,43 @@
 import fetchMovieData from "./fetchMovieData.js";
 
+
+const userContainer = document.getElementById("user-container");
+
+// Check if user data exists in localStorage
+const currentUser = JSON.parse(localStorage.getItem("user"));
+const usersList = JSON.parse(localStorage.getItem("users"));
+
+if (currentUser && usersList) {
+    const loggedInUser = usersList.find(user => user.email === currentUser);
+
+    if (loggedInUser) {
+        // Show user's name and a logout button
+        userContainer.innerHTML = `
+            <div class="text-white flex items-center space-x-3">
+                <span class="fw-semibold">${loggedInUser.fullname}</span>
+                <button id="logout" class="text-white hover:bg-gray-800 p-2 rounded-md">Logout</button>
+            </div>
+        `;
+
+        // Logout functionality
+        document.getElementById("logout").addEventListener("click", () => {
+            localStorage.removeItem("user");
+            alert("Logged out successfully!");
+            window.location.reload();
+        });
+    }
+} else {
+    // Show login button if no user is logged in
+    userContainer.innerHTML = `
+        <a href="./login.html">
+            <button class="text-white hover:bg-gray-800 p-2 rounded-md">
+                <i class="fa-solid fa-user text-white ml-2 text-xl"></i> Sign In
+            </button>
+        </a>
+    `;
+}
+
+
 let api_url = `https://movie-pass-c5a96-default-rtdb.firebaseio.com/`;
 
 let moviesData;
