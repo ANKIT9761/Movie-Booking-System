@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Booking</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link  href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
   <style>
     button:disabled {
@@ -14,35 +16,26 @@
     }
   </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-black text-white">
+  
   <!-- navbar  -->
-  <div class="bg-transparent flex flex-wrap justify-between items-center border-b" >
-    <!-- Left side (logo + search input) -->
+  <div class="bg-transparent flex flex-wrap justify-between items-center border-b">
     <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto">
-      <a href="./Home.html">
-        <img 
-        src="../images/movie-pass-11-16-2024.png" 
-        alt="Movie Pass Logo" 
-        class="w-32 h-12 sm:w-64 sm:h-20 object-fill mx-auto sm:mx-0 sm:flex sm:justify-center sm:align-bottom"  
-        />
-      </a>
+        <a href="./Home.html">
+            <img src="../images/movie-pass-11-16-2024.png" 
+                 alt="Movie Pass Logo" 
+                 class="w-32 h-12 sm:w-64 sm:h-20 object-fill mx-auto sm:mx-0 sm:flex sm:justify-center sm:align-bottom" />
+        </a>
     </div>
-
-    <!-- Right side (Sign In and Location dropdown) -->
     <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto items-center">
-      <!-- Location dropdown -->
-      <div>
-        <i class="fa-solid fa-location-dot text-white ml-2 mr-2 text-xl p-3"></i>
-      </div>
-    <div>
-      <!-- Sign In Button -->
-      <a href="./login.html">
-        <button class="text-white hover:bg-gray-800 p-2 rounded-md"><i class="user fa-solid fa-user text-white ml-2 text-xl"></i> Sign In</button>
-      </a>
+        <div>
+            <i class="fa-solid fa-location-dot text-white ml-2 mr-2 text-xl p-3"></i>
+        </div>
+        <div id="user-container">
+            <!-- User details or Sign In button will be dynamically injected here -->
+        </div>
     </div>
-    </div>
-    
-  </div>
+</div>
 
   <div class="min-h-screen flex flex-col items-center py-10">
     <!-- Header -->

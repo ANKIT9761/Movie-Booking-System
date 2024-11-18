@@ -3,6 +3,7 @@ document.getElementById("signupForm").addEventListener("submit", signup);
 function signup(event) {
     event.preventDefault();
 
+    const fullname = document.getElementById("fullname").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
@@ -33,11 +34,25 @@ function signup(event) {
         .then((resp) => resp.json())
         .then((res) => {
             if (res.idToken) {
+                // Retrieve existing accounts from local storage
+                const users = JSON.parse(localStorage.getItem("users")) || [];
+            
+                // Add the new user to the array
+                users.push({
+                    fullname: fullname,
+                    email: email,
+                    idToken: res.idToken,
+                });
+            
+                // Save the updated array back to local storage
+                localStorage.setItem("users", JSON.stringify(users));
+            
                 alert("Signup successful! Redirecting to login page...");
                 window.location.href = "login.html";
             } else {
-                alert("Signup failed this email is already exists: " + (res.error.message || "Unknown error"));
+                alert("Signup failed. This email already exists: " + (res.error.message || "Unknown error"));
             }
+            
         })
         .catch((err) => console.error("Error:", err));
 }
