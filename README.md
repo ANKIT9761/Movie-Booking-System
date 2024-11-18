@@ -122,7 +122,8 @@ movie-booking-system/
 ---
 
 ## Video Walkthrough  
-[Attach a short video showing the project’s functionality and flow (1-3 minutes).] 
+[![Watch the Video](https://github.com/user-attachments/assets/4a6e3724-7472-40c5-814c-34a44d9688bb)
+](https://drive.google.com/file/d/1uGeUYDiXpcpJGhCV8Y7Ud8greq5hsaxT/view?usp=sharing)
 
 ## Code Walkthrough  
 [![Watch the Video](https://github.com/user-attachments/assets/4a6e3724-7472-40c5-814c-34a44d9688bb)
