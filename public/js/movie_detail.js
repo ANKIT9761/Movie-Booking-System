@@ -74,5 +74,19 @@ let btn1 = document.getElementById("book_ticket");
 btn1.addEventListener("click", SeatSelection);
 
 function SeatSelection() {
-    window.location.href = `CinemaSelection.html?movieId=${movieId}`;
+    if (currentUser && usersList) {
+        // User is logged in, proceed to seat selection
+        window.location.href = `CinemaSelection.html?movieId=${movieId}`;
+    } else {
+        // User is not logged in, prompt for login or signup
+        const confirmLogin = confirm(
+            "You need to log in to book tickets. Would you like to log in or sign up now?"
+        );
+
+        if (confirmLogin) {
+            // Redirect to login/signup page
+            window.location.href = "./login.html";
+        }
+    }
 }
+
