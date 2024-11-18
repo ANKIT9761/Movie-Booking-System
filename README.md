@@ -105,13 +105,27 @@ movie-booking-system/
 ---
 
 ## Screenshots  
-[Include relevant screenshots showcasing the Home page, Cinema Selection page, and dynamic time validation.]  
+### Home Page
+![image](https://github.com/user-attachments/assets/23c02221-3fb6-4847-ae7b-394ebe942223)
+![image](https://github.com/user-attachments/assets/8346fda6-2d33-4cfd-bdab-14327376217a)
+
+### Movie-Details Page
+![image](https://github.com/user-attachments/assets/345a798a-a510-4c20-8dd3-27df71658b09)
+
+### Cinema Selection Page
+![image](https://github.com/user-attachments/assets/c14c7779-32a9-4780-aaab-2d9f8327e9f6)
+
+### Seat Selection Page
+![image](https://github.com/user-attachments/assets/be062663-504e-463e-8507-90571b3fb101)
+
 
 ---
 
 ## Video Walkthrough  
-[Attach a short video showing the project’s functionality and flow (1-3 minutes).] 
+[![Watch the Video](https://github.com/user-attachments/assets/4a6e3724-7472-40c5-814c-34a44d9688bb)
+](https://drive.google.com/file/d/1uGeUYDiXpcpJGhCV8Y7Ud8greq5hsaxT/view?usp=sharing)
 
 ## Code Walkthrough  
-[Attach a short video showing the project’s functionality and flow (1-3 minutes).]
+[![Watch the Video](https://github.com/user-attachments/assets/4a6e3724-7472-40c5-814c-34a44d9688bb)
+](https://drive.google.com/file/d/1nhw340OEbuH-v3aj8wr3KEA6Nxqo4oHZ/view?usp=sharing)
 
