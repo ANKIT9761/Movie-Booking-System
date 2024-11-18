@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Logout button functionality
     document.getElementById("logout").addEventListener("click", () => {
       localStorage.removeItem("user"); // Clear user data
+      localStorage.removeItem("moviesData");
       alert("Logged out successfully!");
       window.location.reload(); // Refresh the page
     });

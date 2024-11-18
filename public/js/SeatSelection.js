@@ -22,6 +22,7 @@ if (currentUser && usersList) {
         // Logout functionality
         document.getElementById("logout").addEventListener("click", () => {
             localStorage.removeItem("user");
+            localStorage.removeItem("moviesData");
             alert("Logged out successfully!");
             window.location.reload();
         });
@@ -41,13 +42,9 @@ if (currentUser && usersList) {
 let api_url = `https://movie-pass-c5a96-default-rtdb.firebaseio.com/`;
 
 let moviesData;
-if(localStorage.getItem("moviesData")) {
-    moviesData = JSON.parse(localStorage.getItem("moviesData"));
-}
-else{
-    moviesData = await fetchMovieData(api_url);
-    localStorage.setItem("moviesData", JSON.stringify(moviesData));
-}
+
+moviesData = await fetchMovieData(api_url);
+localStorage.setItem("moviesData", JSON.stringify(moviesData));
 
 
 // Parse movieId from the URL

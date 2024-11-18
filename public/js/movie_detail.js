@@ -21,6 +21,7 @@ if (currentUser && usersList) {
         // Logout functionality
         document.getElementById("logout").addEventListener("click", () => {
             localStorage.removeItem("user");
+            localStorage.removeItem("moviesData");
             alert("Logged out successfully!");
             window.location.reload();
         });
